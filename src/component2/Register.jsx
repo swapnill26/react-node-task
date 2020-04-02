@@ -10,7 +10,7 @@ function Register(props){
         e.preventDefault()
         register(userRegister).then(res=>{
             if(res){
-                props.history.push('/login')
+                props.history.push('/')
             }
         })
     }

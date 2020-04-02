@@ -10,9 +10,6 @@ function Profile(props){
     const [manager,setManager]=useState({manager_id:'',first_name:'',last_name:'',email:''});
     const [employee,setEmployee]=useState({emp_id:'',emp_firstname:'',last_name:'',address:'',dob:'',mobile:'',city:''})
 
-    //console.log(employee);
-    
-
     useEffect(()=>{
         const token=localStorage.usertoken;
          if(token){
@@ -32,24 +29,22 @@ function Profile(props){
         }  
     },[]);
 
-
+    //submit Route for add new employee
     const submit=()=>{
         axios.post('http://localhost:4500/addemployee',{employee:employee})
         .then(res=>{
             alert(res.data);
-            // props.history.push('/profile');
         })
     }
 
-
+    //Update data On state Index
     const updateData=(e,id)=>{
         const array=[...employee]
-
         array[id][e.target.name]=e.target.value
-
         setEmployee(array);
     }
 
+    //Upadate Route
     const onUpdate=(e,id)=>{
         axios.post(`http://localhost:4500/updateEmployee`,{employee:employee[id]})
         .then(res=>{
@@ -57,6 +52,7 @@ function Profile(props){
         })
     }
 
+    //Delete Record Route
     const deletedata=(emp_id)=>{
         let conf= window.confirm("You want to delete This record");
         if(conf==true){

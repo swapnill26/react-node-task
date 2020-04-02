@@ -4,12 +4,12 @@ import './Login.css';
 
 function Login(props){
     const [login,setLogin]=useState({email:'',password:''});
-    console.log(login);
-    
+     
+    //submit 
     const submit=(e)=>{
         e.preventDefault()
         loginUser(login).then(res=>{
-            alert(res)
+            alert(res);
             const token=localStorage.usertoken;
             if(token){
                 props.history.push('/profile')

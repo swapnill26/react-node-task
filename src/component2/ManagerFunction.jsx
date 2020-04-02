@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+
+//Add Manager Route
 export const register=newUser=>{
     return(
         axios.post('http://localhost:4500/register',{
@@ -12,12 +14,13 @@ export const register=newUser=>{
             company:newUser.company
         })
         .then(res=>{
-            alert(res.data)
-            console.log('registered')
+            return res
+            // alert(res.data);
         })
     )
 }
 
+//Login Route
 export const loginUser=user=>{
     return(
         axios.post('http://localhost:4500/login',{
@@ -34,6 +37,7 @@ export const loginUser=user=>{
     )
 }
 
+//Add employee route
 export const addEmployee=newEmployee=>{
     return(
         axios.post('http://localhost:4500/addEmployee',{
