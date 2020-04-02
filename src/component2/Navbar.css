@@ -1,0 +1,14 @@
+.navbar{
+    background-color: black;
+}
+.navbar-nav>li {
+    margin-left: 50px;
+}
+.navbar-nav>li>a {
+    padding-top: 15px;
+    /* padding-bottom: 15px; */
+    color: white;
+}
+.navbar-brand{
+    color: white;
+}
